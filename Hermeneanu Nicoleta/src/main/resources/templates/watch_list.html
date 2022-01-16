@@ -10,6 +10,7 @@
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous">
+<link rel="shortcut icon" href="/images/logo.png">
 <link rel="stylesheet" href="/style.css">
 
 <header>
@@ -29,7 +30,9 @@
 <body>
 
 <th:block th:each="movie:${watched_movies}">
-    <div class="pricing-box-container">
+    <div class="pricing-box-container"
+         style="gap: 10px 20px;
+                float: left;">
         <div class="pricing-box text-center">
             <h5>[[${movie.getName}]]</h5>
             <ul class="features-list">
@@ -51,6 +54,17 @@
                                 align-text: center;"
                }
                class="btn btn-info" th:href="@{'/watch_list/unwatch'+ ${movie.id}}">Delete</a>
+            <a style=
+                       "padding: 5px 30px;
+                                size: 10px;
+                                background-color: rgba(0, 136, 169, 1);
+                                border: none;
+                                border-radius: 50px;
+                                cursor: pointer;
+                                transition: all 0.3s ease 0s;
+                                margin-right: 10px;
+                                align-text: center;"
+               class="btn btn-info" th:href="@{'/watch_list/favorite'+${movie.id}}">Favorite</a>
         </div>
     </div>
 </th:block>

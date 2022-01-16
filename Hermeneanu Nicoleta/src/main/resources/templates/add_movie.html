@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your movie tracker - Add a movie</title>
+    <title>Movie tracker - Add a movie</title>
 </head>
 
 <!-- CSS only -->
@@ -25,13 +25,12 @@
     </ul>
 </header>
 
-<h1>Add new movie</h1>
+<h1>Add movie</h1>
 
 <body>
 <div class="container-fluid text-center">
     <form th:action="@{/add_movie/save}" method="post" th:object="${movie}" style="max-width: 50em;margin:0 auto">
-        <div class="border">
-
+        <div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">
                     Name

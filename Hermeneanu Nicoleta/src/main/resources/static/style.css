@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,800;1,900&display=swap');
 
 * {
-    box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 10px;
     align-content: center;
     background-color: #24252A;
 }
@@ -20,7 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 15px 5% 10px;
     border-bottom: #444 solid;
 }
 
@@ -35,7 +32,7 @@ logo {
 
 .links li {
     display: inline-block;
-    padding: 0px 20px
+    padding: 0px 20px;
 }
 
 .links li a {
@@ -62,17 +59,25 @@ button:hover {
     background-color: rgba(0, 136, 169, 0.8);
 }
 
+body {
+    background-color: #24252A;
+}
+
 div {
     background-color: #24252A;
     justify-content: center;
-    gap: 10px 20px;
-    float: left;
 }
 
 .col-sm-8 {
+    background-color: #24252A;
     float: right;
     width: 50%;
     margin-top: 10px;
+}
+
+.col-sm-4 {
+    color: white;
+    background-color: #24252A;
 }
 
 input::-webkit-outer-spin-button,
@@ -97,7 +102,7 @@ option {
 h1 {
     text-align: center;
     text-transform: uppercase;
-    padding: 15px 0;
+    padding: 15px;
     background: #24252A;
     color: white;
     font-size: 28px;
@@ -114,10 +119,9 @@ h1 {
     justify-content: center;
     border-radius: 2px;
     display: inline-block;
-    height: 520px;
-    margin: 10px;
+    height: 480px;
     width: 350px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .pricing-box {
@@ -127,7 +131,7 @@ h1 {
     flex: 1;
     padding: 0 30px 30px;
     margin: 2%;
-    height: 500px;
+    height: 420px;
     width: 350px;
 }
 
@@ -136,13 +140,13 @@ h1 {
 }
 
 .features-list {
-    padding: 0;
+    padding: 10px;
     list-style-type: none;
 }
 
 .features-list li {
     font-weight: 100;
-    padding: 12px 0;
+    padding: 15px 0;
     font-weight: 100;
 }
 
@@ -150,8 +154,8 @@ h5 {
     text-align: center;
     text-transform: uppercase;
     padding: 15px 0;
-    background: #f6f6f6;
+    background: whitesmoke;
     color: #000;
-    font-size: 28px;
-    font-weight: 300;
+    font-size: 25px;
+    font-weight: 100;
 }

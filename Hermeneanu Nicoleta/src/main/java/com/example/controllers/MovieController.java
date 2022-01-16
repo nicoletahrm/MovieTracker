@@ -34,16 +34,6 @@ public class MovieController {
         return "home";
     }
 
-    @GetMapping("/home/favorite{id}")
-    public String addFavoriteList(@PathVariable("id") Long id, Model model) {
-        Optional<Movie> movie = movieService.findById(id);
-        Collection<Movie> movies = movieService.listAll();
-        movie.get().setFavorite(true);
-        movieService.save(movie.get());
-        model.addAttribute("movies", movies);
-        return "redirect:/home";
-    }
-
     @GetMapping("/add_movie")
     public String addMovie(Model model) {
         model.addAttribute("movie", new Movie());
@@ -116,10 +106,30 @@ public class MovieController {
         return "redirect:/watch_list";
     }
 
+    @GetMapping("/watch_list/favorite{id}")
+    public String favoriteMovie(@PathVariable("id") Long id, Model model) {
+        Optional<Movie> movie = movieService.findById(id);
+        Collection<Movie> watched_movies = movieService.listAllWatchedMovies();
+        movie.get().setFavorite(true);
+        movieService.save(movie.get());
+        model.addAttribute("watched_movies", watched_movies);
+        return "redirect:/watch_list";
+    }
+
     @GetMapping("/favorite_movies")
     public String favoriteMovies(Model model) {
         Collection<Movie> favorite_movies = movieService.listAllFavoriteMovies();
         model.addAttribute("favorite_movies", favorite_movies);
         return "favorite_movies";
+    }
+
+    @GetMapping("/favorite_movies/delete{id}")
+    public String deleteFavoriteMovie(@PathVariable("id") Long id, Model model) {
+        Optional<Movie> movie = movieService.findById(id);
+        Collection<Movie> favorite_movies = movieService.listAllFavoriteMovies();
+        movie.get().setFavorite(false);
+        movieService.save(movie.get());
+        model.addAttribute("favorite_movies", favorite_movies);
+        return "redirect:/favorite_movies";
     }
 }

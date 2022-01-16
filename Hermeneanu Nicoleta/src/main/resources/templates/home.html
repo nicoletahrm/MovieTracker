@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your movie tracker - Home</title>
+    <title>Movie tracker - Home</title>
 </head>
 
 <!-- CSS only -->
@@ -26,21 +26,27 @@
     </ul>
 </header>
 
+<h1>Your movie tracker</h1>
+
 <body>
 
 <th:block th:each="movie:${movies}">
-    <div class="pricing-box-container">
+    <div class="pricing-box-container"
+         style="gap: 10px 20px;
+                float: left;">
         <div class="pricing-box text-center">
-        <h5>[[${movie.getName}]]</h5>
-        <ul class="features-list">
-            <li><strong>Genre: </strong>[[${movie.getGenre}]]</li>
-            <li><strong>Duration: </strong>[[${movie.getDuration}]]</li>
-            <li><strong>Rating: </strong>[[${movie.getRating}]]</li>
-            <li><strong>Year of apparition: </strong>[[${movie.getYearOfApparition}]]</li>
-        </ul>
 
-        <a style=
-                   "padding: 5px 30px;
+            <h5>[[${movie.getName}]]</h5>
+
+            <ul class="features-list">
+                <li><strong>Genre: </strong>[[${movie.getGenre}]]</li>
+                <li><strong>Duration: </strong>[[${movie.getDuration}]]</li>
+                <li><strong>Rating: </strong>[[${movie.getRating}]]</li>
+                <li><strong>Year of apparition: </strong>[[${movie.getYearOfApparition}]]</li>
+            </ul>
+
+            <a style=
+                       "padding: 5px 30px;
                                 size: 10px;
                                 background-color: rgba(0, 136, 169, 1);
                                 border: none;
@@ -49,8 +55,7 @@
                                 transition: all 0.3s ease 0s;
                                 margin-right: 10px;
                                 align-text: center;"
-           }
-           class="btn btn-info" th:href="@{'/home/watched'+${movie.id}}">Watched</a>
+               class="btn btn-info" th:href="@{'/home/watched'+${movie.id}}">Watched</a>
         </div>
     </div>
 </th:block>
