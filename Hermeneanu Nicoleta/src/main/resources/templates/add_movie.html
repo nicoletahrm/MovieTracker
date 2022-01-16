@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your movie tracker - Add a movie</title>
+</head>
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous">
+<link rel="stylesheet" href="/style.css">
+<link rel="shortcut icon" href="/images/logo.png">
+
+<header>
+    <img class="logo" src="/images/logo.png" alt="logo"></img>
+    <ul class="links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/watch_list">Watch list</a></li>
+        <li><a href="/favorite_movies">Favorite movies</a></li>
+        <li><a href="/add_movie">Add movie</a></li>
+        <li><a href="/find">Update movie</a></li>
+        <li><a href="/delete_movie">Delete movie</a></li>
+    </ul>
+</header>
+
+<h1>Add new movie</h1>
+
+<body>
+<div class="container-fluid text-center">
+    <form th:action="@{/add_movie/save}" method="post" th:object="${movie}" style="max-width: 50em;margin:0 auto">
+        <div class="border">
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Name
+                </label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="${movie.name}" class="form-control" required minlength="3"
+                           maxlength="200" placeholder="Name"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Genre
+                </label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="${movie.genre}" class="form-control" required minlength="3"
+                           maxlength="20" placeholder="Genre"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Duration
+                </label>
+                <div class="col-sm-8">
+                    <input type="number" th:field="${movie.duration}" class="form-control" required minlength="3"
+                           maxlength="20" placeholder="Duration"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Rating
+                </label>
+                <div class="col-sm-8">
+                    <input type="number" step="0.01" th:field="${movie.rating}" class="form-control" required
+                           minlength="1" maxlength="2" placeholder="1-10"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Year of apparition
+                </label>
+                <div class="col-sm-8">
+                    <input type="number" th:field="${movie.yearOfApparition}" class="form-control" required
+                           minlength="4" maxlength="4" placeholder="Year of apparition"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Description
+                </label>
+                <div class="col-sm-8">
+                    <textarea th:field="${movie.description}" class="form-control" id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Watched?
+                </label>
+                <div class="col-sm-8">
+                    <select th:field="${movie.watched}">
+                        <option th:value="'true'" th:text="Yes"></option>
+                        <option th:value="'false'" th:text="No" selected="selected"></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">
+                    Favorite movie?
+                </label>
+                <div class="col-sm-8">
+                    <select th:field="${movie.favorite}">
+                        <option th:value="'true'" th:text="Yes"></option>
+                        <option th:value="'false'" th:text="No"></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="text" style="margin:1em" align="right">
+                    <button type="submit" class="btn btn-primary">Add movie</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='/home'";>Cancel</button>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

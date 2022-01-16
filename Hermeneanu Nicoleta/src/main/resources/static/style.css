@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    background-color: #24252A;
+}
+
+li, a, button {
+    font-family: 'Montserrat', sans-serif;
+    font-width: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    border-bottom: #444 solid;
+}
+
+logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    padding: 0px 20px
+}
+
+.links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.links li a:hover {
+    color: #0088a9
+}
+
+button {
+    padding: 5px 30px;
+    size: 10px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-right: 10px;
+    align-text: center
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+div {
+    background-color: #24252A;
+    justify-content: center;
+    gap: 10px 20px;
+    float: left;
+}
+
+.col-sm-8 {
+    float: right;
+    width: 50%;
+    margin-top: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    color: white;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    list-style: none;
+    align: left;
+}
+
+option {
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0;
+    background: #24252A;
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pricing-box-container {
+    background-color: #24252A;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    display: inline-block;
+    height: 520px;
+    margin: 10px;
+    width: 350px;
+    margin-left: 10px;
+}
+
+.pricing-box {
+    background-color: #24252A;
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    flex: 1;
+    padding: 0 30px 30px;
+    margin: 2%;
+    height: 500px;
+    width: 350px;
+}
+
+.pricing-box h5 {
+    text-transform: uppercase;
+}
+
+.features-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.features-list li {
+    font-weight: 100;
+    padding: 12px 0;
+    font-weight: 100;
+}
+
+h5 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0;
+    background: #f6f6f6;
+    color: #000;
+    font-size: 28px;
+    font-weight: 300;
+}
