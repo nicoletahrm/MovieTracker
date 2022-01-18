@@ -64,12 +64,14 @@ public class MovieController {
     @PostMapping("/update_movie/save")
     public String updateMovieSave(@ModelAttribute("movie") final Movie movie, RedirectAttributes redirectAttributes) {
         Optional<Movie> m = movieService.findById(movie.getId());
-        m.get().setDuration(movie.getDuration());
         m.get().setName(movie.getName());
         m.get().setGenre(movie.getGenre());
+        m.get().setDuration(movie.getDuration());
         m.get().setRating(movie.getRating());
         m.get().setDescription(movie.getDescription());
         m.get().setYearOfApparition(movie.getYearOfApparition());
+        m.get().setWatched(movie.getWatched());
+        m.get().setFavorite(movie.getFavorite());
         movieService.save(m.get());
         redirectAttributes.addFlashAttribute("message", "Movie update succesfully");
         return "redirect:/home";

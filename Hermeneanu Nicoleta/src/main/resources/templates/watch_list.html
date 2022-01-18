@@ -52,8 +52,8 @@
                                 transition: all 0.3s ease 0s;
                                 margin-right: 10px;
                                 align-text: center;"
-               }
-               class="btn btn-info" th:href="@{'/watch_list/unwatch'+ ${movie.id}}">Delete</a>
+               class="btn btn-info" th:href="@{'/watch_list/favorite'+${movie.id}}">Favorite</a>
+
             <a style=
                        "padding: 5px 30px;
                                 size: 10px;
@@ -64,7 +64,8 @@
                                 transition: all 0.3s ease 0s;
                                 margin-right: 10px;
                                 align-text: center;"
-               class="btn btn-info" th:href="@{'/watch_list/favorite'+${movie.id}}">Favorite</a>
+               }
+               class="btn btn-info" th:href="@{'/watch_list/unwatch'+ ${movie.id}}">Delete</a>
         </div>
     </div>
 </th:block>
